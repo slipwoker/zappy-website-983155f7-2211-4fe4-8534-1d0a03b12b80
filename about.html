@@ -1,0 +1,516 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the story behind Claudemenu, where artisanal craftsmanship meets modern dining. Learn about our commitment to exceptional restaurants near me.">
+  <meta name="keywords" content="about Claudemenu, restaurant story, artisan dining, italian restaurants near me, indian restaurants near me">
+  <title>Our Story & Culinary Philosophy — Claudemenu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: static;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '983155f7-2211-4fe4-8534-1d0a03b12b80',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="assets/claudemenu-food-and-beverage-logo.webp" alt="Claudemenu" class="logo" />
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      
+      <button class="phone-header-btn" aria-label="Call us">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      
+      <div class="nav-cta-container">
+        <li class="nav-cta-item">
+          <a href="/reservations" class="nav-cta-btn">Reserve Table</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our Story &amp; Culinary Philosophy</h1>
+      <h3>Where artisanal craftsmanship meets modern dining excellence, creating one of the most distinctive restaurants near me</h3>
+    </div>
+  </section>
+
+  <section class="about-intro">
+    <div class="container">
+      <div class="about-content">
+        <p>At Claudemenu, we believe that exceptional restaurants near me should do more than serve food — they should create experiences that linger in memory long after the last bite. Our journey began with a simple yet powerful vision: to craft a dining destination where artisanal quality, authentic flavors, and warm hospitality converge to create something truly special.</p>
+        <p>Founded on principles of culinary excellence and sustainable practices, Claudemenu has evolved into a beloved destination for food enthusiasts, business professionals, and celebration seekers alike. We've drawn inspiration from the finest italian restaurants near me and the most authentic indian restaurants near me, blending traditional techniques with contemporary innovation to create a menu that honors heritage while embracing creativity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy-section">
+    <div class="container">
+      <h2>Our Culinary Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-item">
+          <div class="philosophy-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3>Ingredient Integrity</h3>
+          <p>We partner with local farmers, sustainable fisheries, and artisan producers to source the finest ingredients. Every component on our menu is selected for quality, freshness, and ethical sourcing. This commitment to ingredient integrity ensures that every dish reflects the natural flavors and nutritional value that define exceptional restaurants near me.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <div class="philosophy-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3>Artisanal Craftsmanship</h3>
+          <p>From our wood-fired pizzas to our handmade pasta, every dish is crafted with meticulous attention to detail. Our culinary team honors traditional techniques while embracing modern innovation, creating food that respects heritage and delights contemporary palates. This dedication to craftsmanship sets us apart among restaurants near me.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <div class="philosophy-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <h3>Cultural Authenticity</h3>
+          <p>We celebrate diverse culinary traditions, drawing inspiration from italian restaurants near me and indian restaurants near me while maintaining authentic flavor profiles. Our chefs study traditional recipes, master authentic spice blends, and honor time-tested cooking methods to deliver genuine cultural experiences through food.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <div class="philosophy-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Warm Hospitality</h3>
+          <p>At Claudemenu, we believe that exceptional dining extends beyond the plate. Our team is dedicated to creating a welcoming atmosphere where every guest feels valued and cared for. From the moment you enter until your final farewell, we strive to make your experience memorable through attentive, genuine hospitality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-content">
+        <h2>The Claudemenu Journey</h2>
+        <p>Our story begins with a passion for food that transcends mere sustenance. The founders of Claudemenu spent years traveling, studying culinary traditions, and working in kitchens across the globe. From the rustic trattorias of Tuscany to the vibrant spice markets of Mumbai, these experiences shaped a vision for a restaurant that would honor authentic flavors while embracing modern culinary innovation.</p>
+        <p>When we opened our doors, we set out to create more than just another restaurant. We envisioned a space where local food enthusiasts could discover new flavors, where business professionals could conduct meetings in an atmosphere of refined elegance, and where families could celebrate life's special moments over exceptional meals. Today, Claudemenu stands as a testament to that vision, recognized among the finest restaurants near me for our commitment to quality, authenticity, and hospitality.</p>
+        <p>Our menu reflects this journey, featuring dishes inspired by the best italian restaurants near me and the most authentic indian restaurants near me. Each recipe tells a story — of tradition honored, techniques mastered, and flavors perfected. From our signature wood-fired pizzas to our aromatic curry dishes, every item on our menu represents countless hours of research, testing, and refinement.</p>
+        <p>But our journey doesn't end with food. We're deeply committed to sustainability and community engagement. We work exclusively with local farmers who share our values, reducing our environmental footprint while supporting our local economy. We source seafood from certified sustainable fisheries, ensuring that our ocean-to-table offerings protect marine ecosystems for future generations. And we continuously seek ways to minimize waste, from composting kitchen scraps to using eco-friendly packaging for takeout orders.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <h2>What Sets Us Apart</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Daily Fresh Pasta</h3>
+          <p>Unlike many italian restaurants near me, we make our pasta fresh every morning using organic flour and farm-fresh eggs. This commitment to freshness creates a texture and flavor that simply cannot be replicated with dried pasta.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Wood-Fired Excellence</h3>
+          <p>Our custom-built wood-fired oven reaches temperatures that create the perfect char and crust on our pizzas. This traditional cooking method, combined with our artisanal dough recipe, produces results that honor the heritage of authentic Italian pizza-making.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Authentic Spice Blends</h3>
+          <p>We source whole spices and create our own blends in-house, following traditional recipes that honor the complexity of authentic Indian cuisine. This attention to detail elevates our curry dishes beyond what typical indian restaurants near me offer.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Sustainable Sourcing</h3>
+          <p>Every ingredient is carefully selected based on quality, sustainability, and ethical sourcing practices. We maintain direct relationships with our suppliers, ensuring transparency and supporting businesses that share our values.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Seasonal Innovation</h3>
+          <p>While we honor traditional recipes, we also embrace seasonal creativity. Our menu evolves throughout the year to showcase the best produce each season offers, keeping our offerings fresh and exciting for regular guests.</p>
+        </div>
+        
+        <div class="value-card">
+          <h3>Health-Conscious Options</h3>
+          <p>We recognize that today's diners value both flavor and nutrition. Our menu includes numerous health-conscious options featuring organic produce, lean proteins, and nutrient-dense ingredients without compromising on taste or presentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2>Meet Our Culinary Team</h2>
+      <p class="team-intro">Behind every exceptional dish at Claudemenu is a team of passionate culinary professionals dedicated to excellence. Our chefs bring decades of combined experience from kitchens around the world, each contributing unique skills and perspectives to our menu.</p>
+      <div class="team-description">
+        <p>Our head chef trained in Michelin-starred kitchens across Europe, mastering techniques that inform our approach to italian restaurants near me. Our pastry chef studied traditional dessert-making in Paris before bringing those skills to our artisan dessert menu. And our spice specialist spent years traveling through India, learning authentic curry preparation from regional masters, ensuring our offerings rival the best indian restaurants near me.</p>
+        <p>Together, this team collaborates daily to maintain the high standards that define Claudemenu. They experiment with new flavor combinations, refine classic recipes, and ensure that every plate leaving our kitchen meets our exacting standards for quality, presentation, and flavor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="commitment-section">
+    <div class="container">
+      <h2>Our Commitment to You</h2>
+      <div class="commitment-content">
+        <p>When you dine at Claudemenu, you're not just visiting another restaurant — you're becoming part of a community that values quality, authenticity, and meaningful connections. We're committed to creating an environment where every guest feels welcome, every dietary preference is respected, and every meal is an opportunity for discovery and delight.</p>
+        <p>Whether you're a local gastronome exploring restaurants near me, a business professional seeking an elegant venue for client meetings, or a family celebrating a special occasion, Claudemenu is designed to exceed your expectations. We continuously refine our offerings, train our staff, and enhance our space to ensure that your experience with us is nothing short of exceptional.</p>
+        <p>Our promise is simple: we will always prioritize quality over convenience, authenticity over trends, and your satisfaction over our bottom line. This commitment has earned us a loyal following and recognition as one of the premier restaurants near me, and it guides every decision we make as we continue to grow and evolve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Experience the Claudemenu Difference</h2>
+        <p>We invite you to visit us and discover why discerning diners consider Claudemenu one of the finest restaurants near me. Reserve your table today and let us share our passion for exceptional food, warm hospitality, and unforgettable dining experiences.</p>
+        <a href="/reservations" class="btn-primary">Make a Reservation</a>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2025 Claudemenu. כל הזכויות שמורות.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://twitter.com/[twitter_handle]" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a></div>
+          <div class="footer-legal">
+            <a href="privacy.html" aria-label="מדיניות פרטיות">
+              מדיניות פרטיות
+            </a>
+            <span class="separator">|</span>
+            <a href="accessibility.html" aria-label="נגישות">
+              נגישות
+            </a>
+            <span class="separator">|</span>
+            <a href="terms.html" aria-label="תנאי שימוש">
+              תנאי שימוש
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>נוצר באמצעות <a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = '983155f7-2211-4fe4-8534-1d0a03b12b80';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          header.style.display = 'block';
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+    <script src="script.js"></script>
+</body></html>

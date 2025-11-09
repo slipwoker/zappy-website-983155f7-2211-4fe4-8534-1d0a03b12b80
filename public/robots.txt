@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://claudemenu-983155f7.zappy5.app/sitemap.xml

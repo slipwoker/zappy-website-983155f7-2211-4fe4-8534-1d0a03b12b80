@@ -1,0 +1,559 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Claudemenu for reservations, inquiries, or to learn more about our exceptional restaurant. Reach out to one of the finest restaurants near me today.">
+  <meta name="keywords" content="contact restaurant, restaurant reservations, italian restaurants near me, indian restaurants near me, restaurants near me">
+  <title>Contact Us & Reservations — Claudemenu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: static;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '983155f7-2211-4fe4-8534-1d0a03b12b80',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="assets/claudemenu-food-and-beverage-logo.webp" alt="Claudemenu" class="logo" />
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      
+      <button class="phone-header-btn" aria-label="Call us">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      
+      <div class="nav-cta-container">
+        <li class="nav-cta-item">
+          <a href="/reservations" class="nav-cta-btn">Reserve Table</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Claudemenu</h1>
+      <h3>Get in touch with one of the finest restaurants near me — we're here to answer your questions and welcome you to an exceptional dining experience</h3>
+    </div>
+  </section>
+
+  <section class="contact-intro">
+    <div class="container">
+      <div class="contact-intro-content">
+        <p>Whether you're looking to make a reservation, inquire about private dining options, or simply learn more about our menu and philosophy, the Claudemenu team is ready to assist you. As one of the premier restaurants near me, we pride ourselves on responsive communication and warm, personalized service.</p>
+        <p>We welcome inquiries about our artisan menu, which features everything from wood-fired pizzas inspired by italian restaurants near me to authentic curry dishes that rival the best indian restaurants near me. Our team is happy to discuss dietary accommodations, event planning, and special requests to ensure your dining experience exceeds expectations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-main">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-section">
+          <h2>Get In Touch</h2>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <p><a href="tel:[business_phone]">[business_phone]</a></p>
+              <p class="contact-note">Call us for immediate assistance or reservations</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p><a href="mailto:[business_email]">[business_email]</a></p>
+              <p class="contact-note">Send us your inquiries and we'll respond within 24 hours</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Location</h3>
+              <p>[business_address]</p>
+              <p class="contact-note">Conveniently located to serve you</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Hours</h3>
+              <p><strong>Lunch:</strong> Tuesday - Sunday, 11:30 AM - 3:00 PM</p>
+              <p><strong>Dinner:</strong> Tuesday - Sunday, 5:30 PM - 10:00 PM</p>
+              <p><strong>Closed:</strong> Mondays</p>
+              <p class="contact-note">Reservations recommended for dinner service</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-section">
+          <h2>Send Us a Message</h2>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required="">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required="">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="reservation">Reservation Inquiry</option>
+                <option value="private-dining">Private Dining Event</option>
+                <option value="menu">Menu Questions</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" required=""></textarea>
+            </div>
+            
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reservations-info">
+    <div class="container">
+      <h2>Making Reservations at Our Restaurant</h2>
+      <div class="reservations-content">
+        <p>At Claudemenu, we recommend making reservations, especially for dinner service and weekend dining. As one of the most sought-after restaurants near me, our tables fill quickly, particularly during peak hours. Reservations ensure that we can provide you with the attentive service and exceptional dining experience that defines our restaurant.</p>
+        <p>For parties of six or more, we encourage you to contact us directly by phone or email. Our team can discuss special seating arrangements, menu customizations, and any specific needs your group may have. We're experienced in accommodating business dinners, anniversary celebrations, birthday parties, and other special occasions.</p>
+        <p>If you're interested in experiencing our full menu, including dishes inspired by italian restaurants near me and indian restaurants near me, please let us know when making your reservation. Our team can provide recommendations based on your preferences, dietary restrictions, and the season's best offerings.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="private-dining">
+    <div class="container">
+      <h2>Private Dining &amp; Special Events</h2>
+      <div class="private-dining-content">
+        <p>Claudemenu offers elegant private dining spaces perfect for intimate gatherings, corporate events, and milestone celebrations. Our private dining areas can accommodate groups from 12 to 50 guests, providing an exclusive atmosphere while maintaining the artisan chic aesthetic that defines our restaurant.</p>
+        <p>When you book a private event with us, our culinary team works with you to create a customized menu that reflects your preferences and the occasion. Whether you're interested in a tasting menu showcasing our signature dishes, a themed dinner featuring italian restaurants near me-inspired cuisine, or a fusion experience blending our best offerings, we'll craft an unforgettable meal for your guests.</p>
+        <p>Private dining packages include dedicated service staff, customizable menu options, wine pairing recommendations, and flexible room configurations to suit your event needs. Contact us today to discuss your upcoming event and discover why Claudemenu is the preferred choice among restaurants near me for special occasions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Do you accommodate dietary restrictions?</h3>
+          <p>Absolutely. We offer vegetarian, vegan, gluten-free, and dairy-free options. Please inform us of any dietary restrictions when making your reservation, and our culinary team will ensure you have delicious options that meet your needs.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Is there parking available?</h3>
+          <p>Yes, we offer complimentary parking for our guests. Our lot is located adjacent to the restaurant, and valet service is available during dinner hours on weekends.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Can I order takeout or delivery?</h3>
+          <p>Yes, we offer both takeout and delivery services. While we believe the full Claudemenu experience is best enjoyed in our dining room, we understand the convenience of enjoying our food at home. Contact us to place a takeout order.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Do you offer gift certificates?</h3>
+          <p>Yes, Claudemenu gift certificates are available in any denomination and make perfect gifts for food enthusiasts. Contact us to purchase gift certificates, which can be used for dining or applied toward private events.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>What is your cancellation policy?</h3>
+          <p>We request at least 24 hours notice for reservation cancellations. For private events, cancellation policies vary based on group size and date. Please contact us for specific details.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Do you have a dress code?</h3>
+          <p>We maintain a smart casual dress code. While we don't require formal attire, we ask that guests avoid athletic wear, beachwear, or overly casual clothing to maintain the elevated atmosphere of our restaurant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Experience Claudemenu?</h2>
+        <p>Don't wait to discover why we're recognized as one of the finest restaurants near me. Contact us today to make a reservation, inquire about private dining, or learn more about our artisan menu and culinary philosophy.</p>
+        <a href="/reservations" class="btn-primary">Reserve Your Table</a>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2025 Claudemenu. כל הזכויות שמורות.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://twitter.com/[twitter_handle]" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a></div>
+          <div class="footer-legal">
+            <a href="privacy.html" aria-label="מדיניות פרטיות">
+              מדיניות פרטיות
+            </a>
+            <span class="separator">|</span>
+            <a href="accessibility.html" aria-label="נגישות">
+              נגישות
+            </a>
+            <span class="separator">|</span>
+            <a href="terms.html" aria-label="תנאי שימוש">
+              תנאי שימוש
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>נוצר באמצעות <a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = '983155f7-2211-4fe4-8534-1d0a03b12b80';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          header.style.display = 'block';
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+    <script src="script.js"></script>
+</body></html>
